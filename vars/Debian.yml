@@ -7,3 +7,6 @@ __mariadb_packages:
     - mariadb-server
 
 __mariadb_config_file: /etc/my.cnf
+__mariadb_config_include_dir: /etc/mysql/conf.d
+__mariadb_socket: /var/run/mysqld/mysqld.sock
+__mariadb_pid_file: /var/run/mysqld/mysqld.pid
