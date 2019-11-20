@@ -7,7 +7,7 @@ mariadb_dump_path: "/var/local/dump_sql"
 mariadb_log_path: "/var/log/mariadb"
 mariadb_dump_path_script: "/var/local/scripts"
 mariadb_datadir: /var/lib/mariadb
-mariadb_user_home: "/root"
+mariadb_root_home: "/root"
 
 mariadb_databases: []
 # Exemple:
