@@ -19,7 +19,7 @@
 
 - name: Define mariadb_config_file
   set_fact:
-    mariadb_python_librairies: "{{ __mariadb_config_file }}"
+    mariadb_config_file: "{{ __mariadb_config_file }}"
   when: mariadb_config_file is not defined
 
 - include_tasks: "setup-{{ ansible_os_family }}.yml"
