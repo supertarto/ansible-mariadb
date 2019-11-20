@@ -1,7 +1,9 @@
 ---
 __mariadb_daemon: mysql
 __mariadb_python_librairies:
-  - python-mysqldb
+    - python-mysqldb
+
 __mariadb_packages:
-  - mysql-server
+    - mysql-server
+
 __mariadb_config_file: /etc/my.cnf
