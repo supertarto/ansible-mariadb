@@ -1,0 +1,23 @@
+#!/bin/bash
+
+
+if [ -z $1 ]
+then
+    echo "Usage : $0 databasename"
+    exit 1
+fi
+# Variables
+
+MYSQL_USER="{{ mariadb_dump_user }}"
+MYSQL_PASSWD="{{ mariadb_dump_pass }}"
+DATE=`date +%y_%m_%d`
+BACKUP=$1_$DATE
+BACKUP_DIR="{{ mariadb_dump_path }}"
+
+# Dump
+mysqldump --user $MYSQL_USER --password=$MYSQL_PASSWD --result-file=$BACKUP_DIR/$BACKUP.sql $1
+gzip -f $BACKUP_DIR/$BACKUP.sql
+chmod 640 $BACKUP_DIR/$BACKUP.sql.gz
+
+
+find $BACKUP_DIR -type f -mtime +30 -delete

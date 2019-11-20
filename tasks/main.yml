@@ -1,2 +1,29 @@
 ---
+- name: Include OS specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
 
+- name: Define mariadb_packages
+  set_fact:
+    mariadb_packages: "{{ __mariadb_packages | list }}"
+  when: mariadb_packages is not defined
+
+- name: Define mariadb_daemon
+    mariadb_daemon: "{{ __mariadb_daemon }}"
+  when: mariadb_daemon is not defined
+
+- name: Define mariadb_python_librairies
+    mariadb_python_librairies: "{{ __mariadb_python_librairies }}"
+  when: mariadb_python_librairies is not defined
+
+- include_tasks: "setup-{{ ansible_os_family }}.yml"
+
+- include_tasks: configure.yml
+
+- include_tasks: secure-installation.yml
+
+- include_tasks: databases.yml
+
+- include_tasks: users.yml
+
+- include_tasks: dump.yml
+  when: mariadb_use_dump_script

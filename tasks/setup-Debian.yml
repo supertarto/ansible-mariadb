@@ -1,0 +1,15 @@
+---
+- name: Update apt cache
+  apt:
+    update_cache: true
+
+- name: Install Python Librairies for MariaDB
+  package:
+    name: "{{ mariadb_python_librairies }}"
+    state: present
+
+- name: Install MariaDB Packages
+  package:
+    name: "{{ mariadb_packages }}"
+    state: present
+  register: mariadb_packages_installed

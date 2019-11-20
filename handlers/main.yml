@@ -1,2 +1,6 @@
 ---
-
+- name: Restart MariaDB
+  service:
+    name: "{{ mariadb_daemon }}"
+    state: restarted
+    enabled: true

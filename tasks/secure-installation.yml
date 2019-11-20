@@ -1,0 +1,28 @@
+---  
+- name: SECURE - Mise à jour du mot de passe Mariadb
+  mysql_user:
+    name: root
+    host: localhost
+    password: "{{ mariadb_root_password }}"
+  when: mariadb_packages_installed | bool or mariadb_root_password_update
+
+- name: Copy .my.cnf with root crendetial
+  template:
+    src: my-root.cnf.j2
+    dest: "{{ mysql_root_home }}/.my.cnf"
+    mode: 0600
+
+- name: Removes all anonymous user accounts
+  mysql_user:
+    name: ''
+    host_all: yes
+    state: absent
+
+- name: Disallow root login remotely
+  command: mysql -NBe DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1')
+  changed_when: false
+
+- name: Remove test database
+  mysql_db:
+      name: "test"
+      state: "absent"
