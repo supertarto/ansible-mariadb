@@ -6,20 +6,21 @@ mariadb_root_password_update: false
 mariadb_dump_path: "/var/local/dump_sql"
 mariadb_log_path: "/var/log/mariadb"
 mariadb_dump_path_script: "/var/local/scripts"
-mysql_user_home: "/root"
+mariadb_datadir: /var/lib/mariadb
+mariadb_user_home: "/root"
 
 mariadb_databases: []
 # Exemple:
 # - name: database1
-  # collation: utf8_general_ci
-  # encoding: utf8
+# collation: utf8_general_ci
+# encoding: utf8
 
 mariadb_users: []
 # Exemple:
 # - name: username
-  # host: localhost
-  # password: sqlpassword
-  # priv: "*.*:SELECT,UPDATE"
+# host: localhost
+# password: sqlpassword
+# priv: "*.*:SELECT,UPDATE"
 
 mariadb_dump_user: []
 mariadb_dump_pass: []
@@ -28,9 +29,9 @@ mariadb_port: "3306"
 
 mariadb_bind_address: '127.0.0.1'
 
-mariadb_log_path: "/var/log/mariadb"
+
 mariadb_log: "{{ mariadb_log_path }}/mariadb.log"
 mariadb_log_error: "{{ mariadb_log_path }}/mariadb.err"
-mariadb_datadir: /var/lib/mariadb
+
 mariadb_character_set_server: "utf8"
 mariadb_collation_server: "utf8_general_ci"

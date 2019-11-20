@@ -12,7 +12,7 @@
         collation: utf8_general_ci
         encoding: utf8
 
-    mariadb_users: []
+    mariadb_users:
       - name: username
         host: localhost
         password: sqlpassword
@@ -21,8 +21,8 @@
       - name: "{{ mariadb_dump_user }}"
         host: localhost
         password: "{{ mariadb_dump_pass }}"
-        priv: "*.*:SELECT,LOCK TABLES"   
- 
+        priv: "*.*:SELECT,LOCK TABLES"
+
     mariadb_dump_user: "dumpuser"
     mariadb_dump_pass: "Dumppassword"
 

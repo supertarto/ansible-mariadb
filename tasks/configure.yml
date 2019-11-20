@@ -1,8 +1,4 @@
 ---
-- name: Define mariadb_config_file
-    mariadb_python_librairies: "{{ __mariadb_config_file }}"
-  when: mariadb_config_file is not defined
-
 - name: Copy my.cnf global file
   template:
     src: my.cnf.j2
