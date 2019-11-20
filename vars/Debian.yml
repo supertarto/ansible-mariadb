@@ -4,6 +4,6 @@ __mariadb_python_librairies:
     - python-mysqldb
 
 __mariadb_packages:
-    - mysql-server
+    - mariadb-server
 
 __mariadb_config_file: /etc/my.cnf
