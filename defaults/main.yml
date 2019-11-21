@@ -8,7 +8,8 @@ mariadb_log_path: "/var/log/mariadb"
 mariadb_dump_path_script: "/var/local/scripts"
 mariadb_datadir: /var/lib/mariadb
 mariadb_root_home: "/root"
-
+mariadb_root_username: "root"
+mariadb_root_password: "defaultpass"
 mariadb_databases: []
 # Exemple:
 # - name: database1
