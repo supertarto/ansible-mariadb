@@ -6,5 +6,4 @@
     password: "{{ item.password }}"
     priv: "{{ item.priv | default('*.*:USAGE') }}"
     state: present
-    append_privs: "{{ item.append_privs | default('no') }}"
   with_items: "{{ mariadb_users }}"
