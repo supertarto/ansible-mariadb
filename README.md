@@ -38,7 +38,7 @@ mariadb_databases: []
 # collation: utf8_general_ci
 # encoding: utf8
 ```
-Creations of users. The host and priv fiels are optionnal. If not set, the default value, **localhost** and **"\*.\*:USAGE** will be used.
+Creations of users. The host and priv fiels are optionnal. If not set, the default value, **localhost** and **\*.\*:USAGE** will be used.
 ```yml
 mariadb_users: []
 # Exemple:
