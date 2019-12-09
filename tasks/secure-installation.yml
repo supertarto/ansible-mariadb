@@ -12,17 +12,17 @@
     dest: "{{ mariadb_root_home }}/.my.cnf"
     mode: 0600
 
-- name: Removes all anonymous user accounts
-  mysql_user:
-    name: ''
-    host_all: true
-    state: absent
-    login_user: root
-    login_password: "{{ mariadb_root_password }}"
+# - name: Removes all anonymous user accounts
+#  mysql_user:
+#    name: ''
+#    host_all: true
+#    state: absent
+#    login_user: root
+#    login_password: "{{ mariadb_root_password }}"
 
-- name: Remove test database
-  mysql_db:
-    name: "test"
-    state: "absent"
-    login_user: root
-    login_password: "{{ mariadb_root_password }}"
+# - name: Remove test database
+#  mysql_db:
+#    name: "test"
+#    state: "absent"
+#    login_user: root
+#    login_password: "{{ mariadb_root_password }}"
