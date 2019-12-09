@@ -2,6 +2,15 @@
 - name: Update apt cache
   apt:
     update_cache: true
+- name: Install Pip
+  package:
+    name: pip
+    state: present
+
+- name: Make sure pymysql is present
+  pip:
+    name: pymysql
+    state: present
 
 - name: Install Python Librairies for MariaDB
   package:
