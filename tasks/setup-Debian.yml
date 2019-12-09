@@ -2,6 +2,7 @@
 - name: Update apt cache
   apt:
     update_cache: true
+
 - name: Install Pip
   package:
     name: python-pip

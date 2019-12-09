@@ -4,7 +4,7 @@
     name: root
     host: localhost
     password: "{{ mariadb_root_password }}"
-  when: (mariadb_packages_installed | bool) or mariadb_root_password_update
+  when: (mariadb_packages_installed) or mariadb_root_password_update
 
 - name: Copy .my.cnf with root crendetial
   template:
