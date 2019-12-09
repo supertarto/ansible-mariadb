@@ -4,7 +4,7 @@
     update_cache: true
 - name: Install Pip
   package:
-    name: pip
+    name: python-pip
     state: present
 
 - name: Make sure pymysql is present
