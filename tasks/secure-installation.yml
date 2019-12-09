@@ -17,8 +17,12 @@
     name: ''
     host_all: true
     state: absent
+    login_user: root
+    login_password: "{{ mariadb_root_password }}"
 
 - name: Remove test database
   mysql_db:
     name: "test"
     state: "absent"
+    login_user: root
+    login_password: "{{ mariadb_root_password }}"    
