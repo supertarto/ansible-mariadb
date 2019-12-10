@@ -23,7 +23,3 @@
     name: "{{ mariadb_packages }}"
     state: present
   register: mariadb_packages_installed
-  notify: Restart MariaDB
-
-- name: Flush handlers
-  meta: flush_handlers
