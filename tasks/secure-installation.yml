@@ -4,7 +4,7 @@
   command: >
     mysql -u root -NBe
     'ALTER USER "{{ mariadb_root_username }}"@"localhost"
-    IDENTIFIED WITH mysql_native_password BY "{{ mariadb_root_password }}";'
+    IDENTIFIED BY "{{ mariadb_root_password }}";'
   when: (mariadb_packages_installed) or mariadb_root_password_update
 
 - name: Copy .my.cnf with root crendetial
