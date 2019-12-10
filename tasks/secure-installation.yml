@@ -6,7 +6,7 @@
     'ALTER USER "{{ mariadb_root_username }}"@"localhost"
     IDENTIFIED BY "{{ mariadb_root_password }}";'
   when: >
-    ((mariadb_packages_installed) or mariadb_root_password_update) and 
+    ((mariadb_packages_installed) or mariadb_root_password_update) and
     (ansible_distribution == 'Debian' and ansible_distribution_major_version == '10')
 
 - name: Update MySQL root password for localhost root account (< 5.7.x).
@@ -14,7 +14,7 @@
     mysql -NBe
     'SET PASSWORD FOR "{{ mariadb_root_username }}"@"localhost" = PASSWORD("{{ mariadb_root_password }}");'
   when: >
-    ((mariadb_packages_installed) or mariadb_root_password_update) and 
+    ((mariadb_packages_installed) or mariadb_root_password_update) and
     (ansible_distribution == 'Debian' and ansible_distribution_major_version == '9')
 
 - name: Copy .my.cnf with root crendetial
