@@ -14,9 +14,3 @@
     path: "{{ mariadb_log_path }}"
     state: directory
     mode: 0750
-
-- name: Enable mariadb on boot and started
-  service:
-    name: "{{ mariadb_daemon }}"
-    state: started
-    enabled: true
