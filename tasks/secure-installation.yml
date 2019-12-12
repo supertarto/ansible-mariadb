@@ -6,7 +6,7 @@
     'ALTER USER "{{ mariadb_root_username }}"@"localhost"
     IDENTIFIED BY "{{ mariadb_root_password }}";'
   when: >
-    (mariadb_packages_installed) or mariadb_root_password_update
+    (mariadb_packages_installed |bool) or mariadb_root_password_update
 
 - name: Copy .my.cnf with root crendetial
   template:
