@@ -23,7 +23,9 @@
     name: "{{ mariadb_packages }}"
     state: present
   register: mariadb_packages_installed
-  notify: Reload systemd
+  notify:
+    - Reload systemd
+    - Service started
 
 - name: Flush Handlers
   meta: flush_handlers
