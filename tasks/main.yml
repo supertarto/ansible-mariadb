@@ -39,6 +39,10 @@
 
 - include_tasks: "setup-{{ ansible_os_family }}.yml"
 
+- name: Check if MySQL packages were installed.
+  set_fact:
+    mariadb_installed_packages: "{{ mariadb_deb_packages_is_installed is defined and mariadb_deb_packages_is_installed.changed }}"
+
 - include_tasks: configure.yml
 
 - include_tasks: secure-installation.yml

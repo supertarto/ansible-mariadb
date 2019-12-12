@@ -1,17 +1,23 @@
 ---
+- name: Disallow root login remotely
+  command: 'mysql -NBe "{{ item }}"'
+  with_items:
+    - DELETE FROM mysql.user WHERE User='{{ mariadb_root_username }}' AND Host NOT IN ('localhost', '127.0.0.1', '::1')
+  changed_when: false
 
 - name: Update root password for MariaDB
   command: >
     mysql -u root -NBe
     'ALTER USER "{{ mariadb_root_username }}"@"localhost"
     IDENTIFIED BY "{{ mariadb_root_password }}";'
-  when: mariadb_packages_installed or mariadb_root_password_update
+  when: (mariadb_installed_packages | bool )or mariadb_root_password_update
 
 - name: Copy .my.cnf with root crendetial
   template:
     src: my-root.cnf.j2
     dest: "{{ mariadb_root_home }}/.my.cnf"
-    mode: 0600
+    mode: "0600"
+  when: (mariadb_installed_packages | bool )or mariadb_root_password_update    
 
 - name: Removes all anonymous user accounts
   mysql_user:

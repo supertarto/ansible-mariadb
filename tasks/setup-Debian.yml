@@ -1,7 +1,13 @@
 ---
+- name: Check if Mariadb is already installed.
+  stat:
+    path: /etc/init.d/mysql
+  register: mariadb_installed
+
 - name: Update apt cache
   apt:
     update_cache: true
+  when: not mariadb_installed.stat.exists
 
 - name: Install Pip
   package:
@@ -22,7 +28,7 @@
   package:
     name: "{{ mariadb_packages }}"
     state: present
-  register: mariadb_packages_installed
+  register: mariadb_deb_packages_is_installed
   notify:
     - Reload systemd
     - Service started
