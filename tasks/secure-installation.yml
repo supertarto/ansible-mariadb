@@ -17,7 +17,7 @@
     src: my-root.cnf.j2
     dest: "{{ mariadb_root_home }}/.my.cnf"
     mode: "0600"
-  when: (mariadb_installed_packages | bool )or mariadb_root_password_update    
+  when: (mariadb_installed_packages | bool )or mariadb_root_password_update
 
 - name: Removes all anonymous user accounts
   mysql_user:
