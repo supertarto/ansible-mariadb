@@ -6,7 +6,7 @@
 
 - name: Service started
   service:
-    name: "{{ mongodb_daemon_name }}"
+    name: "{{ mariadb_daemon }}"
     state: started
     enabled: true
 
