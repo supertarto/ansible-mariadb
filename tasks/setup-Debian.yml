@@ -16,7 +16,7 @@
 
 - name: Make sure pymysql is present
   pip:
-    name: ["pymysql","setuptools"]
+    name: ["pymysql", "setuptools"]
     state: present
 
 - name: Install Python Librairies for MariaDB
