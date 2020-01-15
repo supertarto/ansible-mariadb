@@ -14,15 +14,15 @@
     name: ["python3-pip", "python3-setuptools"]
     state: present
 
-# - name: Make sure pymysql is present
-#   pip:
-#    name: "pymysql"
-#    state: present
-
-- name: Install Python Librairies for MariaDB
-  package:
-    name: "{{ mariadb_python_librairies }}"
+ - name: Make sure pymysql is present
+   pip:
+    name: "pymysql"
     state: present
+
+# - name: Install Python Librairies for MariaDB
+#  package:
+#    name: "{{ mariadb_python_librairies }}"
+#    state: present
 
 - name: Install MariaDB Packages
   package:
