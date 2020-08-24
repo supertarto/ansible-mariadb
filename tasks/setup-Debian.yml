@@ -9,14 +9,9 @@
     update_cache: true
   when: not mariadb_installed.stat.exists
 
-- name: Install Pip
+- name: Install Python Libraries
   package:
-    name: ["python3-pip", "python3-setuptools"]
-    state: present
-
-- name: Make sure pymysql is present
-  pip:
-    name: "pymysql"
+    name: ["python3-setuptools", "python3-mysqldb"]
     state: present
 
 # - name: Install Python Librairies for MariaDB
