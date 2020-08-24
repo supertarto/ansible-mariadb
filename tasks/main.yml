@@ -12,11 +12,6 @@
     mariadb_daemon: "{{ __mariadb_daemon }}"
   when: mariadb_daemon is not defined
 
-- name: Define mariadb_python_librairies
-  set_fact:
-    mariadb_python_librairies: "{{ __mariadb_python_librairies }}"
-  when: mariadb_python_librairies is not defined
-
 - name: Define mariadb_config_file
   set_fact:
     mariadb_config_file: "{{ __mariadb_config_file }}"

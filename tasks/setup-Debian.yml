@@ -18,11 +18,13 @@
   pip:
     name: "setuptools"
     state: present
+    executable: pip3
 
 - name: Make sure pymysql is present
   pip:
     name: "PyMySQL"
     state: present
+    executable: pip3
 
 # - name: Install Python Librairies for MariaDB
 #   package:
