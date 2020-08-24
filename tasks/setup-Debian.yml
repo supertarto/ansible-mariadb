@@ -11,14 +11,8 @@
 
 - name: Install Pip
   package:
-    name: ["python3-pip"]
+    name: ["python3-pip", "python3-setuptools", "python3-dev"]
     state: present
-
-- name: Make sure setuptools is present
-  pip:
-    name: "setuptools"
-    state: present
-    executable: "pip3"
 
 - name: Make sure pymysql is present
   pip:
