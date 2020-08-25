@@ -30,5 +30,4 @@
     hour: "12"
     user: root
     job: "{{ mariadb_dump_path_script }}/mariadb_dump_script.sh {{ item.name }}"
-    cron_file: mariadb_dump
   with_items: "{{ mariadb_databases }}"
