@@ -1,5 +1,5 @@
 # Ansible MariaDB
-[![Build Status](https://travis-ci.com/supertarto/ansible-mariadb.svg?branch=master)](https://travis-ci.com/supertarto/ansible-mariadb)
+[![CI](https://github.com/supertarto/ansible-mariadb/workflows/CI/badge.svg?event=push)](https://github.com/supertarto/ansible-mariadb/actions?query=workflow%3ACI)
 
 Install and configure MariaDB with Ansible
 
