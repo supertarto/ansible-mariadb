@@ -41,6 +41,7 @@
 - include_tasks: configure.yml
 
 - include_tasks: secure-installation.yml
+  no_log: true
 
 - include_tasks: databases.yml
 
