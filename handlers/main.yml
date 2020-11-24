@@ -1,8 +1,8 @@
 ---
-- name: Reload systemd
-  systemd:
-    daemon_reload: true
-  notify: Service started
+# - name: Reload systemd
+#  systemd:
+#    daemon_reload: true
+#  notify: Service started
 
 - name: Service started
   service:

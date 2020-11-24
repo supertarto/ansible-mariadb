@@ -26,7 +26,6 @@
     state: present
   register: mariadb_deb_packages_is_installed
   notify:
-    - Reload systemd
     - Service started
 
 - name: Flush Handlers
