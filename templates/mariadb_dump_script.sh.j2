@@ -16,7 +16,7 @@ BACKUP=$1_$DATE
 BACKUP_DIR="{{ mariadb_dump_path }}"
 
 # Dump
-{% if mariadb_dump_user is defined %}
+{% if mariadb_dump_user %}
 mysqldump --user $MYSQL_USER --password=$MYSQL_PASSWD --result-file=$BACKUP_DIR/$BACKUP.sql $1
 {% elif %}
 mysqldump --result-file=$BACKUP_DIR/$BACKUP.sql $1
