@@ -7,7 +7,7 @@ then
     exit 1
 fi
 # Variables
-{% if mariadb_dump_user is defined %}
+{% if mariadb_dump_user %}
 MYSQL_USER="{{ mariadb_dump_user }}"
 MYSQL_PASSWD="{{ mariadb_dump_pass }}"
 {% endif %}
