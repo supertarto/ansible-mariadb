@@ -12,7 +12,7 @@
         state: present
 
   vars:
-    mariadb_use_dump_script: true
+    mariadb_use_dump_script: false
 
     mariadb_databases:
       - name: database1
