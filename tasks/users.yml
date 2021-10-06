@@ -1,6 +1,6 @@
 ---
 - name: Create Users and rights
-  mysql_user:
+  ansible.builtin.mysql_user:
     name: "{{ item.name }}"
     host: "{{ item.host | default('localhost') }}"
     password: "{{ item.password }}"

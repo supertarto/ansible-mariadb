@@ -1,27 +1,27 @@
 ---
 - name: Check if Mariadb is already installed.
-  stat:
+  ansible.builtin.stat:
     path: /etc/init.d/mysql
   register: mariadb_installed
 
 - name: Update apt cache
-  apt:
+  ansible.builtin.apt:
     update_cache: true
   when: not mariadb_installed.stat.exists
 
 - name: Install Pip
-  package:
+  ansible.builtin.package:
     name: ["python3-pip", "python3-setuptools", "python3-dev"]
     state: present
 
 - name: Make sure pymysql is present
-  pip:
+  ansible.builtin.pip:
     name: "PyMySQL"
     state: present
     executable: "pip3"
 
 - name: Install MariaDB Packages
-  package:
+  ansible.builtin.package:
     name: "{{ mariadb_packages }}"
     state: present
   register: mariadb_deb_packages_is_installed

@@ -1,6 +1,6 @@
 ---
 - name: Copy my.cnf global file
-  template:
+  ansible.builtin.template:
     src: my.cnf.j2
     dest: "{{ mariadb_config_file }}"
     owner: root
@@ -10,7 +10,7 @@
   notify: Restart MariaDB
 
 - name: Create logs directory for MariaDB
-  file:
+  ansible.builtin.file:
     path: "{{ mariadb_log_path }}"
     state: directory
     mode: 0750

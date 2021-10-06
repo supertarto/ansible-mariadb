@@ -1,6 +1,6 @@
 ---
 - name: Create mariaDB dump directory
-  file:
+  ansible.builtin.file:
     path: "{{ mariadb_dump_path }}"
     state: directory
     owner: root
@@ -8,7 +8,7 @@
     mode: "0750"
 
 - name: Create MariaDB dump script directory
-  file:
+  ansible.builtin.file:
     path: "{{ mariadb_dump_path_script }}"
     state: directory
     owner: root
@@ -16,7 +16,7 @@
     mode: "0750"
 
 - name: Copy MariaDB dump script
-  template:
+  ansible.builtin.template:
     src: mariadb_dump_script.sh.j2
     dest: "{{ mariadb_dump_path_script }}/mariadb_dump_script.sh"
     owner: root
@@ -24,7 +24,7 @@
     mode: "0750"
 
 - name: Create a cron task for MariaDB dump script
-  cron:
+  ansible.builtin.cron:
     name: dump mariadb
     minute: "22"
     hour: "12"
