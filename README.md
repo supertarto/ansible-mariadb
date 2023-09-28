@@ -1,5 +1,5 @@
 # Ansible MariaDB
-[![CI](https://github.com/supertarto/ansible-mariadb/workflows/CI/badge.svg?event=push)](https://github.com/supertarto/ansible-mariadb/actions?query=workflow%3ACI)
+[![CI](https://github.com/supertarto/ansible-mariadb/workflows/ci.yml/badge.svg?event=push)](https://github.com/supertarto/ansible-mariadb/actions/workflows/ci.yml)
 
 Install and configure MariaDB with Ansible
 
@@ -8,7 +8,8 @@ None
 
 ## Tested plateform
 * Debian 10 (Buster)
-* Debian 11 (Bulleyes)
+* Debian 11 (Bullseye)
+* Debian 12 (Bookworm)
 
 ## Role variables
 Those variables let you define if you want to use a dump script, to overwrite the global my.cnf file or to update root password.
