@@ -1,5 +1,5 @@
 ---
-__mariadb_daemon: mysql
+__mariadb_daemon: mariadb
 
 __mariadb_packages:
     - mariadb-server

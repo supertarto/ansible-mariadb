@@ -6,7 +6,7 @@ driver:
   name: docker
 platforms:
   - name: instance
-    image: "thetarto/ansible-${MOLECULE_DISTRIB}"
+    image: "thetarto/ansible-${MOLECULE_DISTRIB}:latest"
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
     cgroupns_mode: host
