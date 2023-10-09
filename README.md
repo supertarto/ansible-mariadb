@@ -1,5 +1,5 @@
 # Ansible MariaDB
-[![CI](https://github.com/supertarto/ansible-mariadb/workflows/ci.yml/badge.svg?event=push)](https://github.com/supertarto/ansible-mariadb/actions/workflows/ci.yml)
+[![CI](https://github.com/supertarto/ansible-mariadb/actions/workflows/ci.yml/badge.svg)](https://github.com/supertarto/ansible-mariadb/actions/workflows/ci.yml)
 
 Install and configure MariaDB with Ansible
 
