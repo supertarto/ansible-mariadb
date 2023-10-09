@@ -6,7 +6,7 @@ mariadb_root_password_update: false
 mariadb_dump_path: "/var/local/dump_sql"
 mariadb_log_path: "/var/log/mariadb"
 mariadb_dump_path_script: "/var/local/scripts"
-mariadb_datadir: /var/lib/mariadb
+mariadb_datadir: /var/lib/mysql
 mariadb_root_home: "/root"
 mariadb_root_username: "root"
 mariadb_root_password: "defaultpass"
